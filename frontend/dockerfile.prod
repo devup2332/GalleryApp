@@ -2,7 +2,11 @@ FROM node:14.17.1
 
 WORKDIR /client
 
-COPY ./build ./
+COPY . ./
+
+RUN npm install
+
+RUN npm run build
 
 RUN npm i -g serve
 
