@@ -1,0 +1,191 @@
+$padding_hover: 20px;
+
+.gallery_component_container {
+  padding: 50px 0px;
+
+  .subcontainer_gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    max-width: 1400px;
+    margin: auto;
+
+    .column_gallery {
+      display: grid;
+      height: fit-content;
+      gap: 30px;
+
+      .image_container {
+        position: relative;
+        cursor: pointer;
+
+        img {
+          display: block;
+          width: 100%;
+          margin: auto;
+        }
+
+        .hover_container {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba($color: #000000, $alpha: 0.35);
+          opacity: 0;
+          visibility: hidden;
+          transition: opacity 0.3s ease, visibility 0.3s ease;
+
+          .btn_delete_photo {
+            position: absolute;
+            width: 30px;
+            background-color: transparent;
+            outline: none;
+            border: none;
+            top: $padding_hover;
+            left: $padding_hover;
+            cursor: pointer;
+
+            svg {
+              fill: $danger_color;
+            }
+          }
+
+          .download_image_btn {
+            position: absolute;
+            top: $padding_hover;
+            right: $padding_hover;
+            width: 45px;
+            height: 35px;
+            border-radius: 10px;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            background-color: #e7e7e7;
+            cursor: pointer;
+            outline: none;
+            transition: background-color 0.3s ease;
+
+            svg {
+              width: 15px;
+              height: 15px;
+
+              g {
+                g {
+                  stroke: rgba($color: #000000, $alpha: 0.45);
+                  transition: stroke 0.3s ease;
+                }
+              }
+            }
+
+            &:hover {
+              background-color: #ffffff;
+
+              svg {
+                g {
+                  g {
+                    stroke: #000000;
+                  }
+                }
+              }
+            }
+          }
+
+          .username_information {
+            display: flex;
+            align-items: center;
+            position: absolute;
+            bottom: $padding_hover;
+            left: $padding_hover;
+            .image_avatar_container {
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;
+              overflow: hidden;
+
+              img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+              }
+            }
+
+            .username_name {
+              color: $white_color;
+              font-family: $main_font;
+              margin-left: 10px;
+              font-size: 12px;
+            }
+          }
+        }
+
+        &:hover {
+          .hover_container {
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 600px) {
+  .gallery_component_container {
+    .subcontainer_gallery {
+      grid-template-columns: 1fr 1fr;
+      width: 76%;
+      max-width: 1300px;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .gallery_component_container {
+    .subcontainer_gallery {
+      max-width: 1180px;
+      .column_gallery {
+        .image_container {
+          .hover_container {
+            .username_information {
+              .username_name {
+                font-size: 15px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  $padding_hover: 25px;
+  .gallery_component_container {
+    .subcontainer_gallery {
+      grid-template-columns: 1fr 1fr 1fr;
+
+      .column_gallery {
+        .image_container {
+          .hover_container {
+            .btn_delete_photo {
+              top: $padding_hover;
+              left: $padding_hover;
+            }
+            .download_image_btn {
+              top: $padding_hover;
+              right: $padding_hover;
+            }
+
+            .username_information {
+              bottom: $padding_hover;
+              left: $padding_hover;
+            }
+          }
+        }
+      }
+    }
+  }
+}

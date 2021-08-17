@@ -1,0 +1,81 @@
+.form {
+  display: grid;
+  gap: 10px;
+
+  .controller {
+    height: 55px;
+
+    input {
+      display: block;
+      width: 100%;
+      height: 32px;
+      padding: 0px 10px;
+      border: 2px solid $dark_color;
+      outline: none;
+      font-weight: 400;
+
+      &::placeholder {
+        color: $dark_color;
+        font-weight: 400;
+      }
+    }
+
+    .message_error {
+      color: $danger_color;
+      font-size: 12px;
+      margin-top: 3px;
+    }
+  }
+
+  .btn_login {
+    height: 32px;
+    border-radius: 20px;
+    border: none;
+    background-color: $accent_color;
+    color: $white_color;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-weight: bolder;
+    box-shadow: 0px 5px 5px 0px rgba($color: $dark_color, $alpha: 0.35);
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+    svg.loading {
+      width: 20px;
+      margin-right: 10px;
+      fill: $white_color;
+    }
+
+    &:hover {
+      background-color: $white_color;
+      color: $accent_color;
+
+      svg.loading {
+        fill: $dark_color;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .form {
+    .controller {
+      height: 65px;
+      input {
+        height: 40px;
+        font-size: 15px;
+      }
+
+      .message_error {
+        font-size: 15px;
+      }
+    }
+
+    .btn_login {
+      font-size: 15px;
+      height: 40px;
+    }
+  }
+}

@@ -1,0 +1,182 @@
+@import "../../../../scss/variables.scss";
+
+.banner_component_container {
+  position: relative;
+  overflow: hidden;
+
+  .wave_banner_container {
+    height: 300px;
+  }
+
+  .banner_body {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: $main_font;
+    width: 80%;
+
+    .banner_text {
+      display: grid;
+      justify-items: center;
+      gap: 30px;
+
+      .description_banner.rightEntrance {
+        font-size: 30px;
+        line-height: 40px;
+        text-align: center;
+        opacity: 0;
+        animation-delay: 0.4s;
+      }
+
+      .btn_join.rightEntrance {
+        height: 40px;
+        border-radius: 20px;
+        border: none;
+        outline: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        cursor: pointer;
+        background-color: $accent_color;
+        color: $white_color;
+        font-size: 12px;
+        box-shadow: 0px 5px 5px 0px rgba($color: #000000, $alpha: 0.35);
+        width: 140px;
+        font-weight: 600;
+        opacity: 0;
+        align-self: center;
+        animation-delay: 1s;
+        transition: background-color 0.3s ease, color 0.3s ease;
+
+        &:hover {
+          background-color: $white_color;
+          color: $accent_color;
+        }
+      }
+    }
+
+    .banner_svg_container {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: 600px) {
+  .banner_component_container {
+    .wave_banner_container {
+      height: 320px;
+    }
+    .banner_body {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 76%;
+
+      .banner_text {
+        justify-items: left;
+        width: 48%;
+
+        .description_banner.rightEntrance {
+          text-align: left;
+        }
+      }
+      .banner_svg_container {
+        display: block;
+
+        svg {
+          display: block;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 760px) {
+  .banner_component_container {
+    .banner_body {
+      .banner_text {
+        .btn_join.rightEntrance {
+          font-size: 15px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 950px) {
+  .banner_component_container {
+      .wave_banner_container {
+            height: unset;
+      }
+    .banner_body {
+      .banner_svg_container.leftEntrance {
+        width: 42%;
+        animation-delay: 1.5s;
+        opacity: 0;
+
+        svg {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1100px) {
+  .banner_component_container {
+    .banner_body {
+      .banner_text {
+        .description_banner.rightEntrance {
+          font-size: 40px;
+          line-height: 50px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1350px) {
+  .banner_component_container {
+
+    .banner_body {
+      max-width: 1180px;
+      .banner_text {
+        .description_banner.rightEntrance {
+          font-size: 50px;
+          line-height: 60px;
+        }
+
+        .btn_join.rightEntrance {
+          width: 160px;
+          height: 48px;
+          border-radius: 30px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1600px) {
+  .banner_component_container {
+    .banner_body {
+      .banner_text {
+        width: 55%;
+        max-width: 593px;
+        .description_banner.rightEntrance {
+          font-size: 64px;
+          line-height: 75px;
+        }
+      }
+
+      .banner_svg_container.leftEntrance {
+        width: 45%;
+        max-width: 512px;
+      }
+    }
+  }
+}

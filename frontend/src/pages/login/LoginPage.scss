@@ -1,0 +1,176 @@
+@import "../../scss/variables.scss";
+@import "./components/Form/Form.scss";
+
+.login_container {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+
+  .right_container.fadeIn {
+    display: none;
+  }
+
+  .left_container.fadeIn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 75%;
+    opacity: 0;
+    max-width: 400px;
+    animation-duration: 0.6s;
+
+    .subcontainer {
+      font-family: $main_font;
+      display: grid;
+      gap: 15px;
+
+      .title_page {
+        text-align: center;
+        font-size: 40px;
+      }
+
+      .subtitle_page {
+        text-align: center;
+        font-size: 15px;
+        font-weight: 400;
+      }
+
+      .btn_login_facebook {
+        display: block;
+        height: 32px;
+        border-radius: 20px;
+        background-color: $facebook_color;
+        color: $white_color;
+        font-weight: 600;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        box-shadow: 0px 5px 5px 0px rgba($color: $dark_color, $alpha: 0.35);
+        transition: background-color 0.3s ease, color 0.3s ease;
+
+        &:hover {
+          background-color: $white_color;
+          color: $facebook_color;
+        }
+      }
+
+      .or {
+        position: relative;
+        text-align: center;
+        display: block;
+
+        &::before {
+          content: "";
+          position: absolute;
+          width: 40%;
+          top: 50%;
+          left: 0;
+          transform: translateY(-50%);
+          height: 1px;
+          background-color: $dark_color;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          width: 40%;
+          top: 50%;
+          right: 0;
+          transform: translateY(-50%);
+          height: 1px;
+          background-color: $dark_color;
+        }
+      }
+
+      .question_login {
+        text-align: center;
+        font-size: 12px;
+
+        .link {
+          cursor: pointer;
+          color: $accent_color;
+          text-decoration: none;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .login_container {
+    .left_container.fadeIn {
+      .subcontainer {
+        .title_page {
+          font-size: 64px;
+        }
+
+        .subtitle_page {
+          font-size: 15px;
+        }
+
+        .btn_login_facebook {
+          height: 40px;
+          font-size: 15px;
+        }
+
+        .question_login {
+          font-size: 15px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .login_container {
+    display: flex;
+    flex-direction: row-reverse;
+    animation-delay: 2s;
+
+    .right_container.fadeIn {
+      display: block;
+      width: 50%;
+      position: relative;
+      animation-duration: 0.6s;
+
+      .vector_container.downEntrance {
+        width: 65%;
+        max-width: 520px;
+        height: fit-content;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: flex;
+        opacity: 0;
+        animation-delay: 0.7s;
+
+        svg {
+          max-width: 100%;
+          display: block;
+        }
+      }
+    }
+
+    .left_container.fadeIn {
+      width: 50%;
+      top: unset;
+      left: unset;
+      max-width: unset;
+      position: relative;
+      animation-delay: 1.3s;
+      animation-duration: 0.5s;
+      transform: translate(0px, 0px);
+
+      .subcontainer {
+        width: 75%;
+        max-width: 480px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+}

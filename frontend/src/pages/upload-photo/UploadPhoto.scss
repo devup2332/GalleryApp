@@ -1,0 +1,210 @@
+@import "../../scss//variables.scss";
+
+.upload_photo_page.fadeIn {
+  animation-delay: 0.1s;
+  animation-duration: 0.7s;
+  opacity: 0;
+  padding: 60px 0px;
+
+  .container {
+    width: 87%;
+    max-width: 430px;
+    margin: 50px auto 0px auto;
+    font-family: $main_font;
+    display: grid;
+    gap: 20px;
+
+    .title_page {
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 40px;
+    }
+
+    .dropzone-container {
+      cursor: pointer;
+      height: fit-content;
+      .dropzone {
+        border: 3px dotted $dark_color;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 300px;
+
+        .body-dropzone {
+          svg {
+            width: 70px;
+            margin: auto;
+            display: block;
+          }
+          .text-dropzone {
+            font-size: 20px;
+            text-align: center;
+            margin-top: 10px;
+          }
+        }
+      }
+
+      input[type="file"] {
+        display: none;
+      }
+
+      .message_error {
+        color: $danger_color;
+        font-size: 12px;
+        margin-top: 5px;
+      }
+
+      .dropzone.on {
+        border-color: $accent_color;
+      }
+    }
+
+    .form {
+      display: grid;
+      gap: 20px;
+
+      .controller_container {
+        height: 55px;
+        input {
+          width: 100%;
+          height: 32px;
+          outline: none;
+          font-size: 12px;
+          border: 2px solid $dark_color;
+          padding: 0px 10px;
+
+          &::placeholder {
+            color: $dark_color;
+          }
+        }
+
+        .message_error {
+          color: $danger_color;
+          font-size: 12px;
+          margin-top: 5px;
+        }
+      }
+
+      .special-container {
+        min-height: 55px;
+        .message_error {
+          font-size: 12px;
+          color: $danger_color;
+          margin-top: 5px;
+        }
+      }
+
+      .controller-textarea-container {
+        min-height: 205px;
+
+        textarea {
+          border: 2px solid $dark_color;
+          width: 100%;
+          display: block;
+          outline: none;
+          font-size: 12px;
+          font-family: $main_font;
+          padding: 10px;
+          resize: none;
+          min-height: 180px;
+
+          &::placeholder {
+            color: $dark_color;
+          }
+        }
+
+        .message_error {
+          font-size: 12px;
+          color: $danger_color;
+          margin-top: 5px;
+        }
+      }
+
+      .btn-upload-image {
+        height: 32px;
+        font-size: 12px;
+        font-weight: 600;
+        color: $white_color;
+        background-color: $accent_color;
+        border-radius: 20px;
+        outline: none;
+        cursor: pointer;
+        border: none;
+        box-shadow: 0px 5px 5px 0px rgba($color: $dark_color, $alpha: 0.35);
+        transition: background-color 0.3s ease, color 0.3s ease;
+
+        &:hover {
+          background-color: $white_color;
+          color: $accent_color;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1000px) {
+  .upload_photo_page.fadeIn {
+    .container {
+      margin: 100px auto 0px auto;
+      grid-template-columns: 1fr 1.2fr;
+      max-width: 1180px;
+      width: 75%;
+      gap: 50px;
+
+      .title_page {
+        text-align: left;
+        font-size: 50px;
+        grid-column: 1 / 3;
+      }
+
+      .form {
+        max-height: 435px;
+        .controller_container {
+          height: 65px;
+          input {
+            font-size: 15px;
+            height: 40px;
+          }
+
+          .message_error {
+            font-size: 15px;
+          }
+        }
+
+        .special-container {
+
+          .message_error {
+            font-size: 15px;
+          }
+        }
+
+        .controller-textarea-container {
+          textarea {
+            font-size: 15px;
+          }
+
+          .message_error {
+            font-size: 15px;
+          }
+        }
+
+        .btn-upload-image {
+          height: 40px;
+          font-size: 15px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1300px) {
+  .upload_photo_page.fadeIn {
+    .container {
+      grid-template-columns: 1fr 2fr;
+
+      .title_page {
+        font-size: 55px;
+      }
+    }
+  }
+}

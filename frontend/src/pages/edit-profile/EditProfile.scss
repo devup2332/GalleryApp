@@ -1,0 +1,143 @@
+@import "../../scss/variables.scss";
+@import "./components/Form/Form.scss";
+
+.edit_profile_page.fadeIn {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  animation-duration: 0.5s;
+  font-family: $main_font;
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  overflow: hidden;
+
+  .subcontainer_edit_profile {
+    margin-top: 20px;
+    .title_edit_profile {
+      text-align: center;
+      font-size: 40px;
+    }
+
+    .form_container {
+      display: grid;
+      width: 85%;
+      max-width: 500px;
+      margin: 20px auto 0px auto;
+      gap: 30px;
+
+      .image_profile_container {
+        width: 270px;
+        height: 270px;
+        border-radius: 50%;
+        overflow: hidden;
+        justify-self: center;
+        position: relative;
+        cursor: pointer;
+
+        img {
+          width: 100%;
+          height: 100%;
+          display: block;
+          object-fit: cover;
+        }
+
+        .hover_content {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          display: grid;
+          gap: 10px;
+          opacity: 0;
+          transition: opacity 0.3s ease;
+
+          svg {
+            justify-self: center;
+            fill: $white_color;
+            width: 70px;
+          }
+
+          .hover_text {
+            color: $white_color;
+            font-size: 20px;
+            text-align: center;
+          }
+        }
+
+        &::before {
+          position: absolute;
+          content: "";
+          width: 100%;
+          height: 100%;
+          opacity: 0;
+          background-color: rgba($color: $dark_color, $alpha: 0.4);
+          transition: opacity 0.3s ease;
+        }
+
+        &:hover {
+          &::before {
+            opacity: 1;
+          }
+
+          .hover_content {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .edit_profile_page.fadeIn {
+    .subcontainer_edit_profile {
+      width: 80%;
+      max-width: 780px;
+      margin: 70px auto 0px auto;
+      .title_edit_profile {
+        text-align: left;
+      }
+      .form_container {
+        display: flex;
+        max-width: unset;
+        width: 100%;
+        justify-content: space-between;
+
+        .image_profile_container {
+          margin: auto 0px auto 0px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1110px) {
+  .edit_profile_page.fadeIn {
+    padding-top: 90px;
+
+    .subcontainer_edit_profile {
+      width: 80%;
+      max-width: unset;
+      margin: 70px auto 0px auto;
+
+      .form_container {
+        .image_profile_container {
+          width: 320px;
+          height: 320px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1350px) {
+  .edit_profile_page.fadeIn {
+    .subcontainer_edit_profile {
+      max-width: 1180px;
+      .title_edit_profile {
+        font-size: 60px;
+        font-weight: 600;
+      }
+    }
+  }
+}

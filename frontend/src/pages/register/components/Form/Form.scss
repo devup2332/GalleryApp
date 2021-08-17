@@ -1,0 +1,89 @@
+.form {
+  display: grid;
+
+  .input_container {
+    width: 100%;
+    height: 60px;
+
+    .input_form_register {
+      width: 100%;
+      height: 32px;
+      outline: none;
+      font-family: $second_font;
+      box-shadow: none;
+      padding: 0px 10px;
+      border: 2px solid $dark_color;
+
+      &::placeholder {
+        color: $dark_color;
+      }
+    }
+
+    .error_message {
+      font-size: 12px;
+      color: $danger_color;
+      opacity: 0;
+      visibility: hidden;
+      margin-top: 5px;
+      transition: opacity 0.3s ease, visiblity 0.3s ease;
+    }
+
+    .error_message.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  .btn_register {
+    height: 32px;
+    border-radius: 30px;
+    background-color: $accent_color;
+    border: none;
+    outline: none;
+    color: $white_color;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0px 5px 5px 0px rgba($color: $dark_color, $alpha: 0.5);
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+    svg.loading {
+      fill: $white_color;
+      width: 20px;
+      margin-right: 10px;
+    }
+
+    &:hover {
+      background-color: $white_color;
+      color: $facebook_color;
+
+      svg.loading {
+        fill: $dark_color;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .form {
+    gap: 15px;
+    .input_container {
+      .input_form_register {
+        font-size: 15px;
+        height: 40px;
+      }
+
+      .error_message {
+        font-size: 15px;
+        margin-top: 0px;
+      }
+    }
+
+    .btn_register {
+      height: 40px;
+      font-size: 15px;
+    }
+  }
+}

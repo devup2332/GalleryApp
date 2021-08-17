@@ -1,0 +1,48 @@
+@import "../../scss//variables.scss";
+
+.snackbar {
+  position: fixed;
+  border-radius: 5px;
+  background-color: #f3f3f3;
+  bottom: 20px;
+  left: 50%;
+  transform: translate(-50%, 100px);
+  padding: 10px 10px;
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+  max-width: 260px;
+  box-shadow: 0px 5px 5px 0px rgba($color: $dark_color, $alpha: 0.35);
+  transition: transform 0.3s ease;
+
+  .snack_message {
+    font-family: $main_font;
+    font-size: 12px;
+  }
+
+  .btn_close_snack {
+    border: none;
+    background-color: transparent;
+    color: $danger_color;
+    outline: none;
+    cursor: pointer;
+  }
+}
+
+.snackbar.on {
+  transform: translate(-50%, 0px);
+}
+
+@media (min-width: 768px) {
+  .snackbar {
+    max-width: 320px;
+
+    .snack_message {
+      font-size: 15px;
+    }
+
+    .btn_close_snack {
+      font-size: 15px;
+    }
+  }
+}

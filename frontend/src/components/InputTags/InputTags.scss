@@ -1,0 +1,84 @@
+@import "../../scss/variables.scss";
+
+.input-tags-container {
+  border: 2px solid $dark_color;
+  position: relative;
+  min-height: 32px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 3px 10px;
+
+  span {
+    font-size: 12px;
+    background-color: #dddddd;
+    padding: 3px 15px;
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    border-radius: 10px;
+
+    svg {
+      width: 13px;
+      margin-left: 5px;
+    }
+  }
+
+  input {
+    width: 100%;
+    height: 22px;
+    border: none;
+    font-size: 12px;
+    outline: none;
+
+    &::placeholder {
+      color: $dark_color;
+    }
+  }
+
+  .autocomplete-container {
+    position: absolute;
+    top: (calc(100% - 15px));
+    left: 0;
+    background-color: #dddddd;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: top 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+
+    p {
+      font-size: 12px;
+      padding: 10px 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: $white_color;
+      }
+    }
+  }
+
+  .autocomplete-container.on {
+    top: (calc(100% + 5px));
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@media (min-width: 1000px) {
+  .input-tags-container {
+    min-height: 40px;
+    align-items: center;
+
+    span {
+      font-size: 15px;
+
+      svg {
+        width: 15px;
+      }
+    }
+    input {
+      font-size: 15px;
+    }
+  }
+}

@@ -1,0 +1,9 @@
+FROM node:14.17.1
+
+WORKDIR /client
+
+COPY ./build ./
+
+RUN npm i -g serve
+
+

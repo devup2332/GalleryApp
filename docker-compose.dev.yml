@@ -1,0 +1,47 @@
+version: "3.9"
+
+services:
+  db:
+    image: mysql
+    container_name: mysql
+    networks:
+      - gallery_net
+    cap_add:
+      - SYS_NICE
+    environment:
+      - MYSQL_ROOT_PASSWORD=123456789
+      - MYSQL_DATABASE=gallery
+
+  client:
+    build:
+      context: ./frontend
+      dockerfile: dockerfile.dev
+    container_name: client
+    ports:
+      - "3000:3000"
+    command: npm start
+    networks:
+      - gallery_net
+    volumes:
+      - "./frontend:/client"
+
+  server:
+    build:
+      context: ./backend
+      dockerfile: dockerfile.dev
+    container_name: server
+    ports:
+      - "8000:8000"
+    command: npm run dev
+    env_file:
+      - ./backend/.dev.env
+    networks:
+      - gallery_net
+    volumes:
+      - "./backend:/server"
+    depends_on:
+      - db
+
+networks:
+  gallery_net:
+    driver: bridge

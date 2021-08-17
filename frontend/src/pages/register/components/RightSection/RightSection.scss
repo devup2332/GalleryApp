@@ -1,0 +1,133 @@
+@import "../../../../scss/variables.scss";
+
+.container_form_register.fadeIn {
+  width: 100%;
+  opacity: 0;
+
+  .subcontainer_form_register {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: $main_font;
+    width: 75%;
+    max-width: 400px;
+    display: grid;
+    gap: 25px;
+
+    .title_form {
+      text-align: center;
+      font-size: 40px;
+    }
+
+    .subtitle_form {
+      text-align: center;
+      font-size: 12px;
+    }
+
+    .btn_join_facebook {
+      height: 32px;
+      background-color: $facebook_color;
+      color: $white_color;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      outline: none;
+      border-radius: 30px;
+      font-weight: bold;
+      box-shadow: 0px 5px 5px 0px rgba($color: $dark_color, $alpha: 0.5);
+      transition: background-color 0.3s ease, color 0.3s ease;
+
+      &:hover {
+        background-color: $white_color;
+        color: $facebook_color;
+      }
+    }
+
+    .or_line {
+      position: relative;
+      text-align: center;
+      width: 80%;
+      justify-self: center;
+      &::after {
+        content: "";
+        width: 40%;
+        max-width: 120px;
+        height: 1px;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translate(0px, -50%);
+        background-color: $dark_color;
+      }
+
+      &::before {
+        content: "";
+        width: 40%;
+        max-width: 120px;
+        height: 1px;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translate(0px, -50%);
+        background-color: $dark_color;
+      }
+    }
+
+    .question_register {
+      text-align: center;
+      font-size: 12px;
+
+      .link_question {
+        color: $accent_color;
+        text-decoration: none;
+        font-weight: bolder;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .container_form_register.fadeIn {
+    animation-delay: 1.5s;
+    .subcontainer_form_register {
+      .title_form {
+        font-size: 64px;
+      }
+
+      .subtitle_form {
+        font-size: 15px;
+      }
+
+      .btn_join_facebook {
+        font-size: 15px;
+        height: 40px;
+      }
+
+      .question_register {
+        font-size: 15px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .container_form_register.fadeIn {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .subcontainer_form_register {
+      position: unset;
+      width: 85%;
+      max-width: 480px;
+      top: unset;
+      left: unset;
+      transform: translate(0px, 0px);
+    }
+  }
+}
