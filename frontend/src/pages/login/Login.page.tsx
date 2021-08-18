@@ -12,7 +12,6 @@ import { ReactComponent as WaveSvg } from "../../assets/icons/wave_vector_login.
 let myWindow: Window;
 let timer: NodeJS.Timer;
 
-
 const LoginPage = () => {
   const history = useHistory();
   const [message, setMessage] = useState("");
@@ -48,8 +47,10 @@ const LoginPage = () => {
   };
 
   const loginFacebook = () => {
-      myWindow = window.open(`https://my-gallery.xyz/api/auth/facebook`) as Window;
-      };
+    myWindow = window.open(
+      `https://my-gallery.xyz/api/auth/facebook`
+    ) as Window;
+  };
 
   useEffect(() => {
     channel.bind("login-facebook", (data: any) => {
@@ -85,9 +86,9 @@ const LoginPage = () => {
 
           <h2 className="subtitle_page">WELCOME BACK</h2>
 
-      <button className="btn_login_facebook" onClick={loginFacebook}>
-        Login With Facebook
-      </button>
+          <button className="btn_login_facebook" onClick={loginFacebook}>
+            Login With Facebook
+          </button>
 
           <span className="or">O</span>
 

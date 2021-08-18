@@ -2,10 +2,8 @@ FROM node:14.17.1
 
 WORKDIR /server
 
-COPY package*.json ./
+COPY . ./
 
 RUN npm install
-
-COPY . .
 
 RUN npm run build

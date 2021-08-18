@@ -57,10 +57,9 @@ const useUploadPhoto = () => {
         },
       });
 
-
       progressRef.current?.classList.remove("on");
     } catch (err) {
-      console.log({ ...err });
+      throw Error("Something went wrong");
     }
   };
 

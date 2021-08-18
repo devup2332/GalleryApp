@@ -12,7 +12,6 @@ export const deletePhoto = async (req: Request, res: Response) => {
 
   await photo?.destroy();
 
-  console.log("Photo destroyed");
 
   pusher.trigger("my-gallery", "photo-deleted", {
     message: "Photo Deleted",
