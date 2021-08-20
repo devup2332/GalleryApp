@@ -2,8 +2,8 @@ FROM node:14.17.1
 
 WORKDIR /server
 
-COPY . ./
+COPY ./build/ ./
 
-RUN npm install
+npm i -g serve
 
-RUN npm run build
+

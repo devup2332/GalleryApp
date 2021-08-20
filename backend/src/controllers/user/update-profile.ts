@@ -79,6 +79,6 @@ export const destroyPhotoCloud = async (public_id: string) => {
 
     return;
   } catch (err) {
-    console.log("ERROR", { ...err });
+      return Error("Cloudinary request is wrong")
   }
 };
