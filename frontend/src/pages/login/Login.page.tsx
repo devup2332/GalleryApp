@@ -103,6 +103,7 @@ const LoginPage = () => {
         </div>
       </div>
       <Snackbar message={message} open={open} />
+    
     </div>
   );
 };
