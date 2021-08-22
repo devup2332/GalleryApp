@@ -41,7 +41,18 @@ services:
       - "./backend:/server"
     depends_on:
       - db
-
+  
+  nginx:
+    build: ./nginx
+    restart: always
+    ports:
+      - "80:80"
+    depends_on:
+      - client
+      - server
+      - db
+    networks:
+      - gallery_net
 networks:
   gallery_net:
     driver: bridge

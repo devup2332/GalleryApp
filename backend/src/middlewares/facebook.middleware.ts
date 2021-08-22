@@ -21,8 +21,7 @@ const facebookStrategy = new Strategy(
     {
         clientID: environments.FB.FB_ID,
         clientSecret: environments.FB.FB_SECRET,
-        callbackURL: "/api/auth/facebook",
-
+        callbackURL: "https://my-gallery.xyz/api/auth/facebook",
         profileFields: ["email", "displayName"],
     },
 
